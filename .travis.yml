@@ -13,4 +13,4 @@ script:
   - docker run -e CI=true meteor/docker-react-app npm run test -- --coverage
 
 after_sucess:
-  - echo "Test Success"
+  - echo "Test Success !!!"
