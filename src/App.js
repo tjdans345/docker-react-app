@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          반갑습니다. ㅎㅎㅎ ㅋㅋㅋㅋㅋㅇㅇㅇ 에베베베베베 ㅋㅋㅋㅋㅋ
+          반갑습니다. 메테오입니다.
         </a>
       </header>
     </div>
