@@ -7,23 +7,23 @@ services:
 
 before_intall:
   - echo "start creating an image with dockerfile"
-  - docker build -t meteor/docker-react-app -f Dockerfile.dev .
+  - docker build -t meteor/docker-react-app -f Dockerfile.dev . # 도커 파일을 도커 이미지로 만들어 줌
 
+# 테스트를 진행하는 부분
 script:
   - docker run -e CI=true meteor/docker-react-app npm run test -- --coverage
 
 after_sucess:
   - echo "Test Success !!!"
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "ap-northeast-2"
+#   app: "docker-react-app"
+#   env: "Dockerreactapp-env"
+#   bucket_name: "elasticbeanstalk-ap-northeast-2-000604320993"
+#   bucket_path: "elasticbeanstalk-ap-northeast-2-000604320993"
+#   on:
+#     branch: master
 
-deploy:
-  provider: elasticbeanstalk
-  region: "ap-northeast-2"
-  app: "docker-react-app"
-  env: "Dockerreactapp-env"
-  bucket_name: "elasticbeanstalk-ap-northeast-2-000604320993"
-  bucket_path: "elasticbeanstalk-ap-northeast-2-000604320993"
-  on:
-    branch: master
-
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_ACCESS_KEY
