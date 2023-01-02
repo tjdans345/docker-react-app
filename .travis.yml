@@ -17,11 +17,11 @@ after_sucess:
 
 deploy:
   provider: elasticbeanstalk
-  region: ap-northeast-2
-  app: docker-react-app
-  env: Dockerreactapp-env
-  bucket_name: elasticbeanstalk-ap-northeast-2-000604320993
-  bucket_path: docker-react-app
+  region: "ap-northeast-2"
+  app: "docker-react-app"
+  env: "Dockerreactapp-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-000604320993"
+  bucket_path: "elasticbeanstalk-ap-northeast-2-000604320993"
   on:
     branch: master
 
