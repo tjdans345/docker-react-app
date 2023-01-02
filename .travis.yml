@@ -7,9 +7,8 @@ services:
 
 before_intall:
   - echo "start creating an image with dockerfile"
-  - docker build -t meteor/docker-react-app -f Dockerfile.dev . # 도커 파일을 도커 이미지로 만들어 줌
+  - docker build -t meteor/docker-react-app -f Dockerfile.dev .
 
-# 테스트를 진행하는 부분
 script:
   - docker run -e CI=true meteor/docker-react-app npm run test -- --coverage
 
